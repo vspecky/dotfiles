@@ -47,7 +47,15 @@ call plug#begin()
 	Plug 'itchyny/lightline.vim'
 	Plug 'junegunn/fzf.vim'
 	Plug 'junegunn/fzf'
+	Plug 'frazrepo/vim-rainbow'
+	Plug 'preservim/nerdcommenter'
+	Plug 'airblade/vim-gitgutter'
 call plug#end()
+
+" vim-rainbow
+let g:rainbow_active = 1
+let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow']
+let g:rainbow_guifgs = ['RoyalBlue3', 'DarkOrange3', 'DarkOrchid3']
 
 " Function for Rust Outline typedefs
 function! s:outline_format(lists)
