@@ -37,6 +37,9 @@ let g:rustfmt_autosave = 1
 " RustPlay link
 let g:rust_clip_command = 'xclip -selection clipboard'
 
+" set .pl to prolog
+let g:filetype_pl="prolog"
+
 call plug#begin()
 "	Plug 'pangloss/vim-javascript'
 "	Plug 'heavenshell/vim-jsdoc
@@ -47,15 +50,21 @@ call plug#begin()
 	Plug 'itchyny/lightline.vim'
 	Plug 'junegunn/fzf.vim'
 	Plug 'junegunn/fzf'
-	Plug 'frazrepo/vim-rainbow'
+"   Plug 'frazrepo/vim-rainbow'
 	Plug 'preservim/nerdcommenter'
 	Plug 'airblade/vim-gitgutter'
+	Plug 'nathanaelkane/vim-indent-guides'
+	Plug 'vim-latex/vim-latex'
 call plug#end()
 
 " vim-rainbow
 let g:rainbow_active = 1
 let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow']
 let g:rainbow_guifgs = ['RoyalBlue3', 'DarkOrange3', 'DarkOrchid3']
+
+" Indent guides
+let g:indent_guides_start_level = 1
+let g:indent_guides_guide_size = 1
 
 " Function for Rust Outline typedefs
 function! s:outline_format(lists)
@@ -138,11 +147,11 @@ let mapleader = " "
 
 " Key maps
 nnoremap <leader>w :w<cr>
-nnoremap <leader>q :q!<cr>
+nnoremap <leader>q :q<cr>
 nnoremap <leader>wq :wq<cr>
 
 " Outline map
-nnoremap <leader>o :Outline<cr>
+nnoremap <leader>fd :Outline<cr>
 
 " Window switching
 nnoremap <leader>h :wincmd h<cr>
@@ -163,6 +172,16 @@ nnoremap tk :tabprev<cr>
 nnoremap th :tabfirst<cr>
 nnoremap tl :tablast<cr>
 
+nnoremap <leader>1 1gt
+nnoremap <leader>2 2gt
+nnoremap <leader>3 3gt
+nnoremap <leader>4 4gt
+nnoremap <leader>5 5gt
+nnoremap <leader>6 6gt
+nnoremap <leader>7 7gt
+nnoremap <leader>8 8gt
+nnoremap <leader>9 9gt
+
 " Directory tree
 nnoremap <leader>od :wincmd v <bar> :Ex <bar> :vertical resize 30 <cr>
 
@@ -182,6 +201,13 @@ nnoremap <leader>ot :split<cr>:resize 20<bar>:terminal<cr>i
 " Multiline comments
 inoremap <C-a> /*<cr>/<esc>ka<space>
 
-" Cargo check and run
-nnoremap <leader>cc :Ccheck<cr>
-nnoremap <leader>cr :Crun<cr>
+" Cargo commands
+nnoremap <leader>Cc :Ccheck<cr>
+nnoremap <leader>Cr :Crun<cr>
+nnoremap <leader>Cb :Cbuild<cr>
+nnoremap <leader>Ct :Ctest<cr>
+
+" Toggle vim-rainbow
+nnoremap <leader>tr :RainbowToggle<cr>
+" Toggle Indent Guides
+nnoremap <leader>ti :IndentGuidesToggle<cr>
