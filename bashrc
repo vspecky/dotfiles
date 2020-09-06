@@ -9,9 +9,12 @@ export PATH="$HOME/Programming/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 
 # Custom Aliases
-alias py3="source ~/Programming/pythonProj/Environments/Default/bin/activate"
+alias py3="source ~/Programming/Python/Default/bin/activate"
 alias godot="~/Godot/Godot_v3.2.1-stable_x11.64"
-alias vconf="nvim ~/.config/nvim/init.vim"
+alias vconf="cd ~/.config/nvim/"
+alias i3conf="nvim ~/.config/i3/config"
+alias ..="cd .."
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -131,3 +134,6 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Created by `userpath` on 2020-08-10 10:34:47
+export PATH="$PATH:/home/vspecky/.local/bin"
