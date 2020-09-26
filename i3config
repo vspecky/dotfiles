@@ -41,7 +41,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec i3-sensible-terminal && transset-df -a 0.95
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -182,7 +182,7 @@ bar {
 }
 
 # Lock screen
-bindsym $mod+m exec lockscreen
+bindsym $mod+m exec i3lock -i ~/Images/Walls/city_night_landscape.png
 
 # Remove borders
 default_border pixel 3
@@ -208,3 +208,12 @@ set $clr #500050
 client.focused                $clr $clr $clr $clr $clr
 client.focused_inactive       $clr $clr $clr $clr $clr
 client.unfocused              $clr $clr $clr $clr $clr
+
+# Wallpaper
+exec --no-startup-id feh --bg-fill ~/Images/Walls/alleyway_vw.jpg
+
+# Compton
+exec picom &
+
+# Keyboard repeat rate
+exec xset r rate 280 40
